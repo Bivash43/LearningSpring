@@ -4,10 +4,7 @@ import com.studentservice.student.model.Student;
 import com.studentservice.student.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -26,6 +23,10 @@ public class StudentController {
         return ResponseEntity.ok(studentService.getAllStudent());
     }
 
+    @GetMapping("/student/{id}")
+    public Student getStudentById(@PathVariable int id){
+        return ResponseEntity.ok(studentService.getStudentByID(id)).getBody();
+    }
 
 
 }
