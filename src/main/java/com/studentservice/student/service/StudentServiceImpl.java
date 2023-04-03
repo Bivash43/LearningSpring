@@ -11,6 +11,13 @@ import java.util.List;
 public class StudentServiceImpl implements StudentService{
     @Autowired
     private StudentRepository studentRepository;
+
+    @Override
+    public String deleteStudentById(int id) {
+        studentRepository.deleteById(id);
+        return "Student Deleted";
+    }
+
     @Override
     public Student saveStudent(Student student) {
         return studentRepository.save(student);

@@ -6,6 +6,8 @@ import java.util.List;
 
 public interface StudentService {
 
+    String deleteStudentById(int id);
+
     public Student saveStudent(Student student);
 
     public List<Student> getAllStudent();
